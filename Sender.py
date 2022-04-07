@@ -32,4 +32,4 @@ class Sender:
         return consoleMessage
 
 Sender().Get_ParametersData()
-#
+#1
