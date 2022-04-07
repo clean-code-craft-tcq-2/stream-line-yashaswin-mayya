@@ -1,9 +1,9 @@
 import sys
-from Data_Generator import *
+from data_generator import *
 
-limit_samples = 50
+Stream_Limit = 50
 
-BMS_temperature = {
+BMS_Temperature = {
     'min_value': 0,
     'max_value': 45
 }
@@ -13,19 +13,22 @@ BMS_SOC = {
     'max_value': 80
 }
 
-class sender:
+class Sender:
 
-    def getParametersData(self):
+    def Get_ParametersData(self):
 
-        self.writeToConsole(f'State of Charge(%)\t-\tBattery Temperature(C)\n')
-
-        for sample in range(limit_samples):
-            temparature_data = data_generator().parameter_value_generate(BMS_temperature['min_value'], BMS_temperature['max_value'])
-            SOC_data = data_generator().parameter_value_generate(BMS_SOC['min_value'], BMS_SOC['max_value'])
-            self.writeToConsole(f'{SOC_data}\t-\t{temparature_data}\n')
+        self.Write_To_Console(f'State of Charge(%)\t-\tBattery Temperature(C)\n')
+        sampleCounter = 0
+        while sampleCounter < Stream_Limit:
+            temparature_data = Data_Generator().Parameter_Value_Generator(BMS_Temperature['min_value'], BMS_Temperature['max_value'])
+            SOC_data = Data_Generator().Parameter_Value_Generator(BMS_SOC['min_value'], BMS_SOC['max_value'])
+            self.Write_To_Console(f'{SOC_data}\t-\t{temparature_data}\n')
+            sampleCounter+=1
+        return sampleCounter
         
 
-    def writeToConsole(self, consoleMessage):
+    def Write_To_Console(self, consoleMessage):
         sys.stdout.write(f'{consoleMessage}\n')
+        return consoleMessage
 
-sender().getParametersData()
+Sender().Get_ParametersData()

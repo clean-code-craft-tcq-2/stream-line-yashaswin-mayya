@@ -1,6 +1,6 @@
 import random
 
-class data_generator:
+class Data_Generator:
 
-    def parameter_value_generate(self, range_min, range_max):
+    def Parameter_Value_Generator(self, range_min, range_max):
         return round(random.uniform(range_min, range_max), 3)
