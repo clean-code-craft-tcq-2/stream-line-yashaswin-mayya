@@ -6,7 +6,7 @@ import unittest
 class Sender_Test(unittest.TestCase):
 
     # def test_data(self):
-    #     lines = sys.stdin.readlines()
+    #     sys.stdin.readlines()
 
     def test_Parameter_Value_Generator(self):
         self.assertIsNotNone(Data_Generator().Parameter_Value_Generator(0,50))
