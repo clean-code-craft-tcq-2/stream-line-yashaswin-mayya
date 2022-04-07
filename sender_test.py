@@ -1,12 +1,8 @@
-#import sys
 from sender import *
 from data_generator import *
 import unittest
 
 class Sender_Test(unittest.TestCase):
-
-    # def test_data(self):
-    #     sys.stdin.readlines()
 
     def test_Parameter_Value_Generator(self):
         #Parameter Value Generator is defined to generate random values within a range in order to simulate sensor data, hence no definite assert such as assertTrue 

@@ -17,7 +17,7 @@ class Sender:
 
     def Get_ParametersData(self):
 
-        self.Write_To_Console(f'State of Charge(%)\t-\t Battery Temperature(°C)')
+        self.Write_To_Console(f'State of Charge(%)\t-\tBattery Temperature(°C)')
         
         sampleCounter = 0
         while sampleCounter < Stream_Limit:
@@ -33,4 +33,5 @@ class Sender:
         sys.stdout.write(f'{consoleMessage}\n')
         return consoleMessage
 
-Sender().Get_ParametersData()
+if __name__ == '__main__':
+    Sender().Get_ParametersData()
