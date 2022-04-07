@@ -9,6 +9,7 @@ class Sender_Test(unittest.TestCase):
     #     sys.stdin.readlines()
 
     def test_Parameter_Value_Generator(self):
+        #Parameter Value Generator is defined to generate random values within a range in order to simulate sensor data, hence no definite assert such as assertTrue 
         self.assertIsNotNone(Data_Generator().Parameter_Value_Generator(0,50))
         self.assertGreaterEqual(Data_Generator().Parameter_Value_Generator(0,50), 0)
         self.assertLessEqual(Data_Generator().Parameter_Value_Generator(0,50), 50)
