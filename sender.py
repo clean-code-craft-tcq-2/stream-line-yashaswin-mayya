@@ -32,5 +32,3 @@ class Sender:
     def Write_To_Console(self, consoleMessage):
         sys.stdout.write(f'{consoleMessage}\n')
         return consoleMessage
-    
-Sender().Get_ParametersData()
