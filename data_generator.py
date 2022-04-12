@@ -9,6 +9,10 @@ class Data_Generator:
         return random.randint(digital_range_min, digital_range_max)
     
     def Digital_To_Analog_Converer(self, sensor_bits, sensor_digital_value, range_min, range_max):
+        # Formula used to convert Digital to Analog:
+        # 
+        # Analog_Value = ((Scale * Digital_Value) / Max._Digital_Value_permissible) - Offset
+        # 
         scale = range_max - range_min
         max_digital_value_permissible = (2**sensor_bits)-1
         offset = 0 - range_min
