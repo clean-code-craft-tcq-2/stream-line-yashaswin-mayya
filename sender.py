@@ -3,6 +3,8 @@ from data_generator import *
 
 Stream_Limit = 50
 
+Sensor_Bits = 12
+
 BMS_Temperature = {
     'min_value': 0,
     'max_value': 45
@@ -21,8 +23,8 @@ class Sender:
         
         sampleCounter = 0
         while sampleCounter < Stream_Limit:
-            temparature_data = Data_Generator().Parameter_Value_Generator(BMS_Temperature['min_value'], BMS_Temperature['max_value'])
-            SOC_data = Data_Generator().Parameter_Value_Generator(BMS_SOC['min_value'], BMS_SOC['max_value'])
+            temparature_data = Data_Generator().Send_Parameter_Data(BMS_Temperature['min_value'], BMS_Temperature['max_value'], Sensor_Bits)
+            SOC_data = Data_Generator().Send_Parameter_Data(BMS_SOC['min_value'], BMS_SOC['max_value'], Sensor_Bits)
             self.Write_To_Console(f'{SOC_data}, {temparature_data}')
             sampleCounter+=1
             
@@ -32,3 +34,5 @@ class Sender:
     def Write_To_Console(self, consoleMessage):
         sys.stdout.write(f'{consoleMessage}\n')
         return consoleMessage
+
+#Sender().Get_ParametersData()
