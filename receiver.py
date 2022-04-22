@@ -1,4 +1,3 @@
-from asyncio.windows_events import NULL
 import sys
 
 samplesInMovingAverage = 5
