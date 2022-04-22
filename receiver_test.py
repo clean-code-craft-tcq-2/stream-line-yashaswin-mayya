@@ -18,7 +18,7 @@ class Receiver_Test(unittest.TestCase):
 
     def test_getSimpleMovingAverage(self):
         self.assertEqual(Receiver().getSimpleMovingAverage(3, ([1,7,5,7,8,4],[8,13,21,43,67,12])), (['-','-',4.33,6.33,6.67,6.33],['-','-',14,25.67,43.67,40.67]))
-        #self.assertIsInstance(Receiver().getSimpleMovingAverage(3, ([1,7,5,7,8,4],[8,13,21,43,67,12])), (['-','-',4.33,6.33,6.67,6.33],['-','-',14,25.67,43.67,40.67]), tuple)
+        self.assertIsInstance(Receiver().getSimpleMovingAverage(3, ([1,7,5,7,8,4],[8,13,21,43,67,12])), (['-','-',4.33,6.33,6.67,6.33],['-','-',14,25.67,43.67,40.67]), tuple)
 
     def test_calculateSimpleMovingAverage(self):
         self.assertEqual(Receiver().calculateSimpleMovingAverage(3, [1,7,5,7,8,4]), ['-','-',4.33,6.33,6.67,6.33])
