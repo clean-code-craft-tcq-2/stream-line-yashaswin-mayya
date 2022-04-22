@@ -13,6 +13,7 @@ class Data_Generator:
         # 
         # Analog_Value = ((Scale * Digital_Value) / Max._Digital_Value_permissible) - Offset
         # 
+        #
         scale = range_max - range_min
         max_digital_value_permissible = (2**sensor_bits)-1
         offset = 0 - range_min
