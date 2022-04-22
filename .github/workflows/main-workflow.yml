@@ -38,7 +38,7 @@ jobs:
           
       - name: Sender | Receiver
         run: |
-          python sender_test.py | python receiver_test.py
+          python sender.py | python receiver.py
           coverage run --branch receiver_test.py
           coverage html
           coverage report
