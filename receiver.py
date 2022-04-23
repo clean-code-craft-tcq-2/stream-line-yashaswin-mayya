@@ -23,19 +23,27 @@ class Receiver:
         processedSOCData = list(map(int, unprocessedInput[SOCDataStartIndex+1:]))
         return (processedTemperatureData, processedSOCData)
 
-    def getMinAndMaxData(self, processedIncomingValues):
-        
+    def getMinData(self, processedIncomingValues):  
         processedTemperatureData = processedIncomingValues[0]
         processedSOCData = processedIncomingValues[1]
         Temperature_Min = min(processedTemperatureData)
-        Temperature_Max = max(processedTemperatureData)
         SOC_Min = min(processedSOCData)
+
+        self.printToConsole(f'\nMinimum Temperature is {Temperature_Min}')
+        self.printToConsole(f'Minimum SOC is {SOC_Min}\n')
+
+        return min(Temperature_Min,SOC_Min)
+
+    def getMaxData(self, processedIncomingValues):
+        processedTemperatureData = processedIncomingValues[0]
+        processedSOCData = processedIncomingValues[1]
+        Temperature_Max = max(processedTemperatureData)
         SOC_Max = max(processedSOCData)
 
-        self.printToConsole(f'\nMinimum Temperature is {Temperature_Min} and Maximum Temperature is {Temperature_Max}')
-        self.printToConsole(f'\nMinimum SOC is {SOC_Min} and Maximum SOC is {SOC_Max}')
+        self.printToConsole(f'\nMaximum Temperature is {Temperature_Max}')
+        self.printToConsole(f'Maximum SOC is {SOC_Max}\n')
 
-        return [min(Temperature_Min,SOC_Min), max(Temperature_Max,SOC_Max)]
+        return max(Temperature_Max,SOC_Max)
 
     
     def getSimpleMovingAverage(self, samplesInMovingAverage, processedIncomingValues):
@@ -53,7 +61,7 @@ class Receiver:
             self.printToConsole(sample)
 
         return (simpleMovingAverage_Temperature,simpleMovingAverage_SOC)
-
+    
 
     def calculateSimpleMovingAverage(self, samplesInMovingAverage, listToProcess):
         simpleMovingAverageList = []
@@ -71,17 +79,11 @@ class Receiver:
         print(consoleMessage)
         return consoleMessage
 
-    def main(self):
-        isExecutionComplete = False
-        if not isExecutionComplete:
-           rawIncomingValues =  self.getRawValuesFromConsole()
-           processedIncomingValues = self.processInput(rawIncomingValues)
-           self.getMinAndMaxData(processedIncomingValues)
-           self.getSimpleMovingAverage(samplesInMovingAverage, processedIncomingValues)
-           isExecutionComplete = True
-        return isExecutionComplete
 
-
-
-
-#Receiver().main()
+# if __name__ == "__main__":
+#     receiver_object = Receiver()
+#     rawIncomingValues =  receiver_object.getRawValuesFromConsole()
+#     processedIncomingValues = receiver_object.processInput(rawIncomingValues)
+#     receiver_object.getMinData(processedIncomingValues)
+#     receiver_object.getMaxData(processedIncomingValues)
+#     receiver_object.getSimpleMovingAverage(samplesInMovingAverage, processedIncomingValues)
