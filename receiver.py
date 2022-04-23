@@ -80,10 +80,9 @@ class Receiver:
         return consoleMessage
 
 
-if __name__ == "__main__":
-    receiver_object = Receiver()
-    rawIncomingValues =  receiver_object.getRawValuesFromConsole()
-    processedIncomingValues = receiver_object.processInput(rawIncomingValues)
-    receiver_object.getMinData(processedIncomingValues)
-    receiver_object.getMaxData(processedIncomingValues)
-    receiver_object.getSimpleMovingAverage(samplesInMovingAverage, processedIncomingValues)
+receiver_object = Receiver()
+rawIncomingValues =  receiver_object.getRawValuesFromConsole()
+processedIncomingValues = receiver_object.processInput(rawIncomingValues)
+receiver_object.getMinData(processedIncomingValues)
+receiver_object.getMaxData(processedIncomingValues)
+receiver_object.getSimpleMovingAverage(samplesInMovingAverage, processedIncomingValues)
