@@ -35,4 +35,4 @@ class Sender:
         sys.stdout.write(f'{consoleMessage}\n')
         return consoleMessage
 
-#Sender().Get_ParametersData()
+Sender().Get_ParametersData()
