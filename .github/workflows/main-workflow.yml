@@ -27,7 +27,7 @@ jobs:
       - name: Run and collect Sender coverage
         run: |
           coverage run --branch sender_test.py
-        report:
+        report: |
           exclude_lines =
             if __name__ == "__main__":
           coverage html
