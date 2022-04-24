@@ -86,5 +86,6 @@ class Receiver:
     def printToConsole(self, consoleMessage):
         print(consoleMessage)
         return consoleMessage
-if __name__ == "__main__":
+    
+if __name__ == "__main__": # pragma: no cover
     Receiver().getRawValuesFromConsole()
