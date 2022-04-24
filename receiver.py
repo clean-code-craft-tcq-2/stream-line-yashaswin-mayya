@@ -87,4 +87,4 @@ class Receiver:
         print(consoleMessage)
         return consoleMessage
 
-#Receiver().getRawValuesFromConsole()
+Receiver().getRawValuesFromConsole()
