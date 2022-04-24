@@ -15,6 +15,8 @@ class Receiver:
         return consoleReadValues
 
     def processInput(self, unprocessedInput):
+        temperatureDataStartIndex=0
+        SOCDataStartIndex=0
         for index in range(len(unprocessedInput)):
             if 'Temperature' in unprocessedInput[index]:
                 temperatureDataStartIndex = index
