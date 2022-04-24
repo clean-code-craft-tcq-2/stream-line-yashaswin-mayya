@@ -50,5 +50,4 @@ class Sender:
         sys.stdout.write(f'{consoleMessage}\n')
         return consoleMessage
 
-if __name__ == "__main__": # pragma: no cover
-    Sender().Get_ParametersData()
+Sender().Get_ParametersData()
