@@ -11,7 +11,6 @@ class Receiver:
             if not streamValue:
                 continue
             consoleReadValues.append(streamValue)
-        self.processInput(consoleReadValues)
         return consoleReadValues
 
     def processInput(self, unprocessedInput):
@@ -25,9 +24,6 @@ class Receiver:
         processedTemperatureData = list(map(float, unprocessedInput[temperatureDataStartIndex+1:SOCDataStartIndex]))
         processedSOCData = list(map(float, unprocessedInput[SOCDataStartIndex+1:]))
         processedIncomingValues = (processedTemperatureData,processedSOCData)
-        self.getMinData(processedIncomingValues)
-        self.getMaxData(processedIncomingValues)
-        self.getSimpleMovingAverage(samplesInMovingAverage, processedIncomingValues)
 
         return (processedTemperatureData, processedSOCData)
 
@@ -88,4 +84,9 @@ class Receiver:
         return consoleMessage
     
 if __name__ == "__main__": # pragma: no cover
-    Receiver().getRawValuesFromConsole()
+    receiver_object = Receiver()
+    rawIncomingValues =  receiver_object.getRawValuesFromConsole()
+    processedIncomingValues = receiver_object.processInput(rawIncomingValues)
+    receiver_object.getMinData(processedIncomingValues)
+    receiver_object.getMaxData(processedIncomingValues)
+    receiver_object.getSimpleMovingAverage(samplesInMovingAverage, processedIncomingValues)
