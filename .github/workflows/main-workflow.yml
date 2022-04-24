@@ -27,7 +27,9 @@ jobs:
       - name: Run and collect Sender coverage
         run: |
           coverage run --branch sender_test.py
-          exclude_lines = if __name__ == .__main__.:
+          [report]
+          exclude_lines =
+            if __name__ == "__main__":
           coverage html
           coverage report
       - name: Upload Sender coverage
@@ -40,6 +42,9 @@ jobs:
       - name: Run and collect Receiver coverage
         run: |
           coverage run --branch receiver_test.py
+          [report]
+          exclude_lines =
+            if __name__ == "__main__":
           coverage html
           coverage report
           
