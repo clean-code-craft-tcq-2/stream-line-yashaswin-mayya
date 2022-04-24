@@ -86,5 +86,5 @@ class Receiver:
     def printToConsole(self, consoleMessage):
         print(consoleMessage)
         return consoleMessage
-
-Receiver().getRawValuesFromConsole()
+if __name__ == "__main__":
+    Receiver().getRawValuesFromConsole()
