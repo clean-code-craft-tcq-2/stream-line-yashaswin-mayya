@@ -1,12 +1,12 @@
-from receiver import *
+from receiver import Receiver
 import unittest
 import sys
 
 class Receiver_Test(unittest.TestCase):
 
-    def test_getRawValuesFromConsole(self):
-        sys.stdout.writelines("5\n8\n2\n10\n37\n55\n")
-        Receiver().getRawValuesFromConsole()
+    # def test_getRawValuesFromConsole(self):
+    #     sys.stdout.writelines("5\n8\n2\n10\n37\n55\n")
+    #     Receiver().getRawValuesFromConsole()
     
     def test_processInput(self):
         self.assertEqual(Receiver().processInput(['Temperature Data','1','3','5','SOC Data','7','11','18']), ([1,3,5],[7,11,18]))
