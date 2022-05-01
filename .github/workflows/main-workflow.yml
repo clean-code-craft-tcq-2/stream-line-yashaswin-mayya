@@ -40,8 +40,7 @@ jobs:
       - name: build receiver
         run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testreceiver Receiver/receiver_test.cpp Receiver/receiver.c
         
-      - name: run receiver
-        run: receiver.c
+
         
       - name: run pipeline
         run:  python sender.py | receiver.c
