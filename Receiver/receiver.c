@@ -62,7 +62,7 @@ void PrintComputedData(float *BMSData, float MaxValue, float Minvalue, float SMA
 
 void ReceiverData(float* SOC, float* Temperature)
 {
- ReadParametersfromConsole(float* SOC, float* Temperature);
+ ReadParametersfromConsole(SOC,Temperature);
  PrintComputedData(SOC,CalculateMaxValue(SOC),CalculateMinValue(SOC),CalculateSMA(SOC));
  PrintComputedData(Temperature,CalculateMaxValue(Temperature),CalculateMinValue(Temperature),CalculateSMA(Temperature));
 }
