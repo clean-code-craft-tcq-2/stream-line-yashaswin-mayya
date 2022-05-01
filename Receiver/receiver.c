@@ -50,12 +50,20 @@ float CalculateSMA(float inputData[])
   return SMA;
 }
 
-void PrintComputedData(float *BMSParameter, float MaxValue, float Minvalue, float SMA)
+void PrintComputedData(float *BMSData, float MaxValue, float Minvalue, float SMA)
   {
   printf("Data received from sender\n");
   for(int index = 0; index < NO_OF_READINGS; index++)
   {
-    printf("%f\n",BMSParameter[index]);
+    printf("%f\n",BMSData[index]);
   }
   printf("Max value: %f, Min value: %f, SMA: %f\n",MaxValue,Minvalue,SMA);
   }
+
+void ReceiverData(float* SOC, float* Temperature)
+{
+ ReadParametersfromConsole(float* SOC, float* Temperature);
+ PrintComputedData(SOC,CalculateMaxValue(SOC),CalculateMinValue(SOC),CalculateSMA(SOC));
+ PrintComputedData(Temperature,CalculateMaxValue(Temperature),CalculateMinValue(Temperature),CalculateSMA(Temperature));
+}
+  
