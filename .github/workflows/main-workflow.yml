@@ -38,7 +38,7 @@ jobs:
           coverage report
           
       - name: build receiver
-        run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testreceiver receiver_test.cpp ./receiver.c
+        run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testreceiver Receiver/receiver_test.cpp Receiver/./receiver.c
         
       - name: run receiver
         run: ./receiver.c
