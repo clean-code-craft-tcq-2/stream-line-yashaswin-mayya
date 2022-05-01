@@ -41,10 +41,10 @@ jobs:
         run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testreceiver Receiver/receiver_test.cpp Receiver/receiver.c
         
       - name: run receiver
-        run: ./receiver.c
+        run: Receiver/receiver.c
         
       - name: run pipeline
-        run:  python sender.py | ./receiver.c
+        run:  python sender.py | Receiver/receiver.c
           
       - name: Upload coverage
         uses: actions/upload-artifact@v2
