@@ -6,6 +6,8 @@ void ReadParametersfromConsole(float* SOC, float* Temperature)
     }
 }
 
+/*Calculate maximum value for the battery parameters*/
+
 float CalculateMaxValue(float inputData[])
 {
   float MaxValue = inputData[0];
@@ -19,7 +21,7 @@ float CalculateMaxValue(float inputData[])
     return MaxValue;
 }
 
-
+//Calculate minimum value for the battery parameters
 float CalculateMinValue(float inputData[])
 {
   float MinValue = inputData[0];
