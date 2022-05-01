@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include "receiver.h"
+
 void ReadParametersfromConsole(float* SOC, float* Temperature)
 {
   for(int paramindex=0; paramindex<NO_OF_READINGS; paramindex++)
