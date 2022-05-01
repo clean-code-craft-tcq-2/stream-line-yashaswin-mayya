@@ -42,3 +42,13 @@ float CalculateSMA(float inputData[])
   SMA = sum/5;
   return SMA;
 }
+
+void PrintComputedData(float *BMSParameter, float MaxValue, float Minvalue, float SMA)
+  {
+  printf("Data received from sender\n");
+  for(int index = 0; index < NO_OF_READINGS; index++)
+  {
+    printf("%f\n",BMSParameter[index]);
+  }
+  printf("Max value: %f, Min value: %f, SMA: %f\n",MaxValue,Minvalue,SMA);
+  }
