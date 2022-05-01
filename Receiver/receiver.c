@@ -40,6 +40,8 @@ float CalculateMinValue(float inputData[])
 //Calculate simple moving average for the last 5 parameters
 float CalculateSMA(float inputData[])
 {
+  float sum;
+  float SMA;
     for (int i = (NO_OF_READINGS - 5); i < (NO_OF_READINGS); i++)
     {
       sum += inputData[i];
