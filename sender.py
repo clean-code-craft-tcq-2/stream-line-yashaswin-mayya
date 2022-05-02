@@ -20,7 +20,7 @@ class Sender:
     def Get_ParametersData(self):
         
         
-        //self.Write_To_Console(f'State of Charge(%), Battery Temperature(°C)')
+        # self.Write_To_Console(f'State of Charge(%), Battery Temperature(°C)')
 
         sampleCounter = 0
         while sampleCounter < Stream_Limit:
