@@ -5,7 +5,7 @@ void ReadParametersfromConsole(float* SOC, float* Temperature)
 {
   for(int paramindex=1; paramindex<NO_OF_READINGS; paramindex++)
     {
-        scanf("%c ,%c ",&SOC[paramindex],&Temperature[paramindex]);
+        scanf("%f ,%f ",&SOC[paramindex],&Temperature[paramindex]);
     }
   printf("%c",SOC[1]);
 }
