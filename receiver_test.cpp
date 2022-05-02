@@ -1,5 +1,5 @@
 #define CATCH_CONFIG_MAIN
-#include "../test/catch.hpp"
+#include "test/catch.hpp"
 #include "receiver.h"
 
 TEST_CASE("Check whether the data is read from console") 
