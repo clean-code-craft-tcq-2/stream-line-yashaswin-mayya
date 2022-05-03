@@ -3,16 +3,16 @@
 
 void ReadParametersfromConsole(float* SOC, float* Temperature)
 {
-  char ReadString[100];
+  char ReadString[200];
   
   for(int paramindex=0; paramindex<NO_OF_READINGS; paramindex++)
     {
-       if(scanf("%100s", ReadString) == EOF) 
+       if(scanf("%20s", ReadString) == EOF) 
        {
          break;
        }
     scanf("%f",&SOC[paramindex]);
-    scanf("%100s", ReadString); //,
+    scanf("%20s", ReadString); //,
     scanf("%f",&Temperature[paramindex]);
     }
   printf("%f",SOC[1]);
