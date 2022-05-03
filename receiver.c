@@ -3,7 +3,7 @@
 
 void ReadParametersfromConsole(float* SOC, float* Temperature)
 {
-  char ReadString[200];
+  char ReadString[500];
   
   for(int paramindex=0; paramindex<NO_OF_READINGS; paramindex++)
     {
