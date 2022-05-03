@@ -6,4 +6,4 @@ float CalculateMinValue(float inputData[]);
 
 void ReadParametersfromConsole(float* SOC, float* Temperature);
 void PrintComputedData(float *BMSParameter, float MaxValue, float Minvalue, float SMA);
-void ReceiverData(float* SOC, float* Temperature);
+int ReceiverData(float* SOC, float* Temperature);
