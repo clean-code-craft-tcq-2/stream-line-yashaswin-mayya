@@ -37,10 +37,10 @@ jobs:
           coverage html
           coverage report
           
-
+      - name: build receiver
+        run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testreceiver receiver_test.cpp ./receiver.c
         
-      - name: run Receiver
-        run: ./testreceiver
+
         
       - name: run pipeline
         run:  sender.py | testreceiver
