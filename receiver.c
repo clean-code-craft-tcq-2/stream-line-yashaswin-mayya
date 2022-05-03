@@ -14,10 +14,10 @@ void ReadParametersfromConsole(float* SOC, float* Temperature)
 }
 
 //Calculate maximum value for the battery parameters
-float CalculateMaxValue(float inputData[],num_of_readings)
+float CalculateMaxValue(float inputData[])
 {
   float MaxValue = inputData[0];
-    for(int i=1; i<num_of_readings; i++)
+    for(int i=1; i<NO_OF_READINGS; i++)
     {
         if(MaxValue < inputData[i])
         {
@@ -28,10 +28,10 @@ float CalculateMaxValue(float inputData[],num_of_readings)
 }
 
 //Calculate minimum value for the battery parameters
-float CalculateMinValue(float inputData[],num_of_readings)
+float CalculateMinValue(float inputData[])
 {
   float MinValue = inputData[0];
-    for(int i=1; i<num_of_readings; i++)
+    for(int i=1; i<NO_OF_READINGS; i++)
     {
         if(MinValue > inputData[i])
         {
@@ -42,11 +42,11 @@ float CalculateMinValue(float inputData[],num_of_readings)
 }
 
 //Calculate simple moving average for the last 5 parameters
-float CalculateSMA(float inputData[],num_of_readings)
+float CalculateSMA(float inputData[])
 {
   float sum = 0;
   float SMA;
-    for (int i = (num_of_readings - 5); i < (num_of_readings); i++)
+    for (int i = (NO_OF_READINGS - 5); i < (NO_OF_READINGS); i++)
     {
       sum += inputData[i];
     }
@@ -64,10 +64,11 @@ void PrintComputedData(float *BMSData, float MaxValue, float Minvalue, float SMA
   printf("Max value: %f, Min value: %f, SMA: %f\n",MaxValue,Minvalue,SMA);
   }
 
-void ReceiverData(float* SOC, float* Temperature)
+int ReceiverData(float* SOC, float* Temperature)
 {
  ReadParametersfromConsole(SOC,Temperature);
  PrintComputedData(SOC,CalculateMaxValue(SOC),CalculateMinValue(SOC),CalculateSMA(SOC));
  PrintComputedData(Temperature,CalculateMaxValue(Temperature),CalculateMinValue(Temperature),CalculateSMA(Temperature));
+ return 1;
 }
   
