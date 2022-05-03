@@ -5,7 +5,7 @@ void ReadParametersfromConsole(float* SOC, float* Temperature)
 {
   char ReadString[20];
   
-  for(int paramindex=1; paramindex<NO_OF_READINGS; paramindex++)
+  for(int paramindex=0; paramindex<NO_OF_READINGS; paramindex++)
     {
        if(scanf("%20s", ReadString) == EOF) 
        {
