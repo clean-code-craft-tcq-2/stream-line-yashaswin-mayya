@@ -43,7 +43,7 @@ jobs:
 
         
       - name: run pipeline
-        run:  sender.py | testreceiver
+        run:  python sender.py | ./testreceiver
           
       - name: Upload coverage
         uses: actions/upload-artifact@v2
