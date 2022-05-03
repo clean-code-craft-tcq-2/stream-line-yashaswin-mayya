@@ -11,7 +11,6 @@ void ReadParametersfromConsole(float* SOC, float* Temperature)
     scanf("%20s", ReadString); //,
     scanf("%f",&Temperature[paramindex]);
     }
-  printf("%f",SOC[1]);
 }
 
 //Calculate maximum value for the battery parameters
