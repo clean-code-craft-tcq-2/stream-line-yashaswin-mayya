@@ -36,6 +36,13 @@ jobs:
           coverage run --branch sender_test.py
           coverage html
           coverage report
+      
+      - name: Upload sender coverage
+        uses: actions/upload-artifact@v2
+        with:
+          name: sender_coverage
+          path: ./htmlcov
+          retention-days: 21
           
       - name: build receiver
         run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testreceiver receiver_test.cpp ./receiver.c
@@ -45,10 +52,10 @@ jobs:
       - name: run pipeline
         run:  python sender.py | ./testreceiver
           
-      - name: Upload coverage
+      - name: Upload receiver coverage
         uses: actions/upload-artifact@v2
         with:
-          name: coverage
+          name: receiver_coverage
           path: ./htmlcov
           retention-days: 21
           
